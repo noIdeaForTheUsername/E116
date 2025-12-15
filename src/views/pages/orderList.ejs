@@ -1,0 +1,43 @@
+<%- include("../partials/header.ejs") %>
+
+<main>
+    <h2>Zamówienia:</h2>
+    <hr>
+    <form method="GET" action="">
+        <h3>Filtruj:</h3>
+        <label for="fileType">Typ pliku:</label>
+        <select id="fileType" name="fileType">
+            <option value="">Wszystkie</option>
+            <option value="jpg">JPG</option>
+            <option value="png">PNG</option>
+            <option value="gif">GIF</option>
+            <option value="uwu">UwU</option>
+        </select><br/>
+
+        <label for="imagesNumber">Liczba obrazów:</label>
+        <input type="number" id="imagesNumber" name="imagesNumber" min="1" /><br/>
+
+        <hr>
+
+        <h3>Sortuj:</h3>
+
+        <label>po: </label>
+        <input type="radio" name="sortingField" value="id"/> numerze zamówienia
+        <input type="radio" name="sortingField" value="imagesNumber"/> liczbie obrazków
+        <br/>
+        <input type="radio" name="sortingOrder" value="asc"/> rosnąco
+        <input type="radio" name="sortingOrder" value="desc"/> malejąco
+        
+        <br/><br/>
+        <input type="submit" value="Zastosuj filtry i sortowanie 🥰"/>
+        <hr>
+    </form>
+    <h3>Lista:</h3>
+    <ul>
+        <% for (let order of orders) { %>
+            <li><a href="/orders/<%=order.id%>">Zamówienie nr <%=order.id%></li></a>
+        <% } %>
+    </ul>
+</main>
+
+<%- include("../partials/footer.ejs") %>

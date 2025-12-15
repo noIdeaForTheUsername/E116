@@ -1,0 +1,32 @@
+<%- include("../partials/header.ejs") %>
+
+<main>
+    <%- include("../partials/message") %>
+
+    <% if (editedOrder) { %>
+        <h2>Edytuj zamówienie nr <%= editedOrder.id %> 👗✏️</h2>
+        
+    <% } else { %>
+        <h2>Złóż zamówienie na obrazki z femboyami :3</h2>
+    <% } %>
+
+    <form method="POST" action="<%= editedOrder ? `/orders/${editedOrder.id}` : '/orders' %>">
+        <% if (editedOrder) { %>
+            <input type="number" id="id" name="id" value="<%= editedOrder.id %>" hidden/><br/><br/>
+        <% } %>
+        <label for="description">Opis zamówienia</label><br/>
+        <textarea id="description" name="description"><%= editedOrder ? editedOrder.description : '' %></textarea><br/><br/>
+        <label for="imagesNumber">Ile obrazków chcesz otrzymać?</label><br/>
+        <input type="number" id="imagesNumber" name="imagesNumber" value="<%= editedOrder ? editedOrder.imagesNumber : '' %>"></textarea><br/><br/>
+        <label for="fileType">Typ pliku, który chcesz otrzymać</label><br/>
+        <select name="fileType" required>
+            <option value="jpg" <%= editedOrder && editedOrder.fileType === 'jpg' ? 'selected' : '' %>>JPG</option>
+            <option value="png" <%= editedOrder && editedOrder.fileType === 'png' ? 'selected' : '' %>>PNG</option>
+            <option value="gif" <%= editedOrder && editedOrder.fileType === 'gif' ? 'selected' : '' %>>GIF</option>
+            <option value="uwu" <%= editedOrder && editedOrder.fileType === 'uwu' ? 'selected' : '' %>>UwU</option>
+        </select><br/><br/>
+        <input type="submit" value="Wysyłam! 👉👈"/>
+    </form>
+</main>
+
+<%- include("../partials/footer.ejs") %>

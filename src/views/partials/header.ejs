@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Charm:wght@400;700&display=swap" rel="stylesheet">
+    <title>OrderAFemboy</title>
+    <style>
+        body {
+            background-color: palevioletred;
+            font-family: 'Charm', cursive;
+            font-style: italic;
+            font-size: 150%;
+        }
+
+        textarea, input, button, select {
+            font-size: 100%;
+            background-color: pink;
+            border: purple 2px solid;
+            border-radius: 10px;
+        }
+
+        img {
+            border: purple 5px solid;
+            border-radius: 15px;
+        }
+
+        @keyframes title {
+            0% { color: rgb(255, 0, 0); transform: rotate(-5deg); }
+            17% { color: rgb(255, 255, 0); }
+            34% { color: rgb(0, 255, 0); }
+            50% { color: rgb(0, 255, 255); transform: rotate(5deg) }
+            67% { color: rgb(0, 0, 255); }
+            84% { color: rgb(255, 0, 255); }
+            100% { color: rgb(255, 0, 0); transform: rotate(-5deg); }
+        }
+
+        .page-title {
+            display: inline-block;
+            animation: title 5s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><span class="page-title">OrderAFemboy</span></h1>
+        <p>Serwis do zamawiania obrazków z femboyami ✨</p>
+    </header>
+    <nav>
+        <hr>
+            <a href="/">Strona główna</a> |
+            <a href="/new">Złóż zamówienie</a> |
+            <a href="/orders">Zobacz zamówienia</a> |
+            <a href="/login">Zaloguj się</a>
+        <hr>
+    </nav>

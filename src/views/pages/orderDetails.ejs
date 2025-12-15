@@ -1,0 +1,22 @@
+<%- include("../partials/header.ejs") %>
+
+<% if (message) {%>
+    <strong><%=message%></strong>
+    <hr>
+<% } %>
+
+<main>
+    <h2>Zamówienie nr <%=order.id%></h2>
+    <ul>
+        <li>Typ pliku: <%=order.fileType%></li>
+        <li>Ilość obrazków: <%=order.imagesNumber%></li>
+        <li>
+            <h3>Opis:</h3>
+            <p><%=order.description%></p>
+        </li>
+    </ul>
+
+    <a href="/orders/<%=order.id%>/edit">Edytuj zamówienie</a>
+</main>
+
+<%- include("../partials/footer.ejs") %>

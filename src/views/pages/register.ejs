@@ -1,0 +1,21 @@
+<%- include("../partials/header") %>
+
+<%- include("../partials/message") %>
+
+<h2>Zarejestruj się</h2>
+<p>Masz już konto <a href="/login">Zaloguj się</a></p>
+
+<form method="POST" action="/register">
+    <label for="login">Login miłośnika femboyów:</label><br/>
+    <input type="text" name="login" id="login"/><br/><br/>
+
+    <label for="password">Hasło miłośnika femboyów:</label><br/>
+    <input type="password" name="password" id="password"/><br/><br/>
+
+    <label for="passwordRepeat">Powtórz hasło, abyś, miłośniku femboyów, się nie pomylił ❤</label><br/>
+    <input type="password" name="passwordRepeat" id="passwordRepeat"/><br/><br/>
+
+    <input type="submit" value="Rejestruję się! 👉👈"/>
+</form>
+
+<%- include("../partials/footer") %>

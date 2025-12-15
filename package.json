@@ -1,0 +1,19 @@
+{
+  "name": "orderafemboy",
+  "version": "1.0.0",
+  "description": "A web service allowing users to create accounts and order femboy images",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js"
+  },
+  "keywords": [],
+  "author": "Igor Maciejewski",
+  "license": "GPL-3.0-only",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "mysql": "^2.18.1"
+  }
+}
