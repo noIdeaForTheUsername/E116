@@ -36,45 +36,55 @@ AUTHOR: Igor Maciejewski
 
 ENDPOINTS:
 
-- GET /
-  returns the home page
-
-- GET /new
-  returns a form page allowing to add a new order
-
-- GET /orders
-  returns a page with a list of all orders
-  Allows the following filters in GET URL query:
-  fileType: string (max 3 characters), imagesNumber: number (integer), sortingField: string, sortingOrder: string
-  allowed values:
-  - sortingField: "fileType", "imagesNumber"
-  - sortingOrder: "asc", "desc"
+1. Orders
   
-
-- GET /orders/:orderId
-  returns the details page of an order
-
-- GET /orders/:orderId/edit
-  returns a form page allowing to edit an existing order
+  - GET /  
+    returns the home page
   
+  - GET /new  
+    returns a form page allowing to add a new order
+  
+  - GET /orders
+    - returns a page with a list of all orders
+    - Allows the following filters/sorting params in GET URL query:  
+    fileType: string (max 3 characters), imagesNumber: number (integer), sortingField: string, sortingOrder: string
+    - allowed query params values:
+      - sortingField: "fileType", "imagesNumber"
+      - sortingOrder: "asc", "desc"
+    
+  
+  - GET /orders/:orderId  
+    returns the details page of an order
+  
+  - GET /orders/:orderId/edit  
+    returns a form page allowing to edit an existing order
+  
+  - POST /orders
+    - posts a new order
+    - Expected JSON payload:  
+    description: string, fileType: string (max 3 characters), imagesNumber: number (integer)
+  
+  - POST /orders/:orderId
+    - edits an existing order
+    - Expected JSON payload:  
+    description: string, fileType: string (max 3 characters), imagesNumber: number (integer)
 
-- POST /orders
-  posts a new order
-  Expected JSON payload:
-  description: string, fileType: string (max 3 characters), imagesNumber: number (integer)
+2. Users
+  
+  - GET /register  
+    returns the registration page
+  
+  - GET /login  
+    returns the login page
+  
+  - POST /register
+    - adds a new account
+    - Expected JSON payload:  
+      login: string, password: string, passwordRepeat: string
+  
+  - POST /login
+    - a prototype of loging into an account. Checks the login and password correctness, but doesn't actually return cookies
+    - Exprected JSON payload:
+      login: string, password: string
 
-- POST /orders/:orderId
-  edits an existing order
-  Expected JSON payload:
-  description: string, fileType: string (max 3 characters), imagesNumber: number (integer)
-
-- GET /register
-  returns the registration page
-
-- GET /login
-  returns the login page
-
-- POST /register
-
-- POST /login
 
