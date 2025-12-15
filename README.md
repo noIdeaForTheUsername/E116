@@ -70,4 +70,11 @@ ENDPOINTS:
 
 - GET /register
   returns the registration page
-  
+
+- GET /login
+  returns the login page
+
+- POST /register
+
+- POST /login
+
