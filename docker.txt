@@ -2,9 +2,9 @@ Setting up the MySQL database in Docker Desktop (https://docs.docker.com/desktop
 
 1. Open the terminal and run the following commands to set up the container:
 
-A. docker run --name femboy-db \-e MYSQL_ROOT_PASSWORD=root \-e MYSQL_DATABASE=femboy-db \-p 3306:3306 \-d mysql:8.0 \--default-authentication-plugin=mysql_native_password
+A. docker run --name femboy-db -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=femboy-db -p 3306:3306 -d mysql:8.0 --default-authentication-plugin=mysql_native_password
 
-B (use this command whenever you want to make changes in the SQL database, like in section 2). docker exec -it femboy-db mysql -uroot -proot
+B (use this command whenever you want to make changes in the SQL database, like in section 2): docker exec -it femboy-db mysql -uroot -proot
 
 
 2. Stay in the terminal and create DB structure by running the following commands:
