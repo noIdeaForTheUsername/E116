@@ -1,0 +1,26 @@
+Setting up the MySQL database in Docker Desktop (https://docs.docker.com/desktop/setup/install/windows-install/): 
+
+1. Open the terminal and run the following commands to set up the container:
+
+A. docker run --name femboy-db \-e MYSQL_ROOT_PASSWORD=root \-e MYSQL_DATABASE=femboy-db \-p 3306:3306 \-d mysql:8.0 \--default-authentication-plugin=mysql_native_password
+
+B. docker exec -it femboy-db mysql -uroot -proot
+
+
+2. Stay in the terminal and create DB structure by running the following commands:
+
+USE femboy-db;
+
+CREATE TABLE `orders` (
+  `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `description` text,
+  `fileType` varchar(3) NOT NULL,
+  `imagesNumber` int NOT NULL DEFAULT '1');
+
+CREATE TABLE `users` (
+  `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `login` varchar(255) DEFAULT NULL,
+  `passwordHash` varchar(255) DEFAULT NULL);
+
+
+3. Done. You can now run the application - instructions in README.md
